@@ -19,8 +19,7 @@ var Konamiz = (function(){
       addEvent(document, 'keydown', function(e){
         mySuit += e.keyCode;
         if(mySuit === konamizSuit){
-          myIsStarted = true;
-          myOnStart();
+          that.start();
         }
         else if(konamizSuit.indexOf(mySuit) === -1){
           mySuit = '';

@@ -1,7 +1,7 @@
 Konamiz
 =======
 
-Lightweight JS Konami code manager
+Lightweight JS Konami code manager : **0.544 Ko** (minified)
 
 How to use ?
 ============

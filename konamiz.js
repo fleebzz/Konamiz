@@ -50,5 +50,3 @@ var Konamiz = (function(){
     };
   }
 })();
-
-Konamiz.prototype.tata = 'tata';

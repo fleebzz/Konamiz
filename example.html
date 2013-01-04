@@ -1,16 +1,16 @@
 <html>
 <head>
-  <title>Konamiz</title>
+  <title>Konamiz example</title>
 </head>
 <body>
-<script type="text/javascript" src="konamiz.js"></script>
+<script type="text/javascript" src="konamiz.min.js"></script>
 <script type="text/javascript">
   var k = new Konamiz()
     .onStart(function(){
-      console.log('start');
+      alert('Konamiz started');
     })
     .onStop(function(){
-      console.log('stop');
+      alert('Konamiz stopped');
     });
 </script>
 </body>

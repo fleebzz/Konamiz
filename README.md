@@ -13,13 +13,12 @@ How to add to your website ?
 
 Always up to date
 -----------------
-<pre>
-  <script type="text/javascript" src="https://raw.github.com/FlorianBezagu/Konamiz/master/konamiz.min.js"><\/script>
-</pre>
+  `<script type="text/javascript" src="https://raw.github.com/FlorianBezagu/Konamiz/master/konamiz.min.js"></script>`
+
 
 Locally
 -------
 Download [konamiz.min.js](https://raw.github.com/FlorianBezagu/Konamiz/master/konamiz.min.js])
-<pre>
-  <script type="text/javascript" src="konamiz.min.js"><\/script>
-</pre>
+<br>
+  `<script type="text/javascript" src="konamiz.min.js"></script>`
+

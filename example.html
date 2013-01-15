@@ -3,14 +3,14 @@
   <title>Konamiz example</title>
 </head>
 <body>
-<script type="text/javascript" src="konamiz.min.js"></script>
+<script type="text/javascript" src="konamiz.js"></script>
 <script type="text/javascript">
-  var k = new Konamiz()
+  var k = new Konamiz([ 'e', 'a', 's', 'i', 'l', 'y', 's', 'enter' ])
     .onStart(function(){
-      alert('Konamiz started');
+      alert('Hello !');
     })
     .onStop(function(){
-      alert('Konamiz stopped');
+      alert('Bye !');
     });
 </script>
 </body>

@@ -8,24 +8,55 @@ var Konamiz = (function(){
     }
   }
 
+  function getCustomSuit(suit){
+    var _suit = '';
+    for (var i = 0; i < suit.length; i++) {
+      var _keyCode = suit[i].toUpperCase();
+      if(typeof SPECIAL_KEYCODES[_keyCode] !== 'undefined'){
+        _suit += SPECIAL_KEYCODES[_keyCode];
+      }
+      else{
+        _suit += _keyCode.charCodeAt(0);
+      }
+    }
+    return _suit;
+  }
+
+  var SPECIAL_KEYCODES = {
+    'SPACE' : 32,
+    'ENTER' : 13,
+    'UP' : 38,
+    'DOWN' : 40,
+    'LEFT' : 37,
+    'RIGHT' : 39
+  };
+
   var konamizSuit = '3838404037393739666513';
 
-  return function(){
-    var myIsStarted = false;
+  return function(suit){
     var myOnStart = function(){};
     var myOnStop = function(){};
-    var mySuit = '';
+    var mySuit = (suit instanceof Array && suit.length > 0) ? getCustomSuit(suit) : konamizSuit;
+    var myCurrentSuit = '';
     (function(that){
       addEvent(document, 'keydown', function(e){
-        mySuit += e.keyCode;
-        if(mySuit === konamizSuit){
-          that.start();
+        myCurrentSuit += e.keyCode;
+        console.log(myCurrentSuit, mySuit.indexOf(myCurrentSuit));
+        if(myCurrentSuit === mySuit){
+          myCurrentSuit = '';
+          if(!that.isStarted){
+            that.start();
+          }
+          else{
+            that.stop();
+          }
         }
-        else if(konamizSuit.indexOf(mySuit) === -1){
-          mySuit = '';
+        else if(mySuit.indexOf(myCurrentSuit) === -1){
+          myCurrentSuit = e.keyCode + '';
         }
       });
     })(this);
+    this.isStarted = false;
     this.onStart = function(fn){
       myOnStart = fn;
       return this;
@@ -35,17 +66,13 @@ var Konamiz = (function(){
       return this;
     };
     this.start = function(){
-      if(!myIsStarted){
-        myIsStarted = true;
-        myOnStart();
-      }
+      myOnStart.call(this);
+      this.isStarted = true;
       return this;
     };
     this.stop = function(){
-      if(myIsStarted){
-        myIsStarted = false;
-        myOnStop();
-      }
+      myOnStop.call(this);
+      this.isStarted = false;
       return this;
     };
   }

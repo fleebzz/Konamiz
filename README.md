@@ -9,7 +9,7 @@ How to add to your website ?
 Always up to date
 -----------------
 ````html
-<script type="text/javascript" src="https://raw.github.com/FlorianBezagu/Konamiz/master/konamiz.min.js"></script>
+<script type="text/javascript" src="https://cdn.rawgit.com/FlorianBezagu/Konamiz/master/konamiz.min.js"></script>
 ````
 
 

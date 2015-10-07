@@ -41,7 +41,6 @@ var Konamiz = (function(){
     (function(that){
       addEvent(document, 'keydown', function(e){
         myCurrentSuit += e.keyCode;
-        console.log(myCurrentSuit, mySuit.indexOf(myCurrentSuit));
         if(myCurrentSuit === mySuit){
           myCurrentSuit = '';
           if(!that.isStarted){
